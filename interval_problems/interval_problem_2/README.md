@@ -6,9 +6,7 @@ Given an array of intervals intervals where intervals[i] = [start[i], end [i]), 
 
 Example 1:
 
-Input: intervals = [[1,2],[2,3],
-
-[3,4],[1,3]]
+Input: intervals = [[1,2],[2,3],[3,4],[1,3]]
 
 Output: 1
 
@@ -16,9 +14,7 @@ Explanation: [1,3] can be removed and the rest of the intervals are non-overlapp
 
 Example 2:
 
-Input: intervals = [[1,2],[1,2],
-
-[1,2]]
+Input: intervals = [[1,2],[1,2],[1,2]]
 
 Output: 2
 
