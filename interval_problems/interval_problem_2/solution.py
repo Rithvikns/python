@@ -1,7 +1,7 @@
 def solution(interval):
   interval.sort(key = lambda x:x[1])
   output = 0
-  previous_end = float(-inf)
+  previous_end = float('-inf')
   for start , end in interval :
     if start >= previous_end:
       previous_end = end
