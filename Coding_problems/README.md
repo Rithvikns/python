@@ -2,7 +2,7 @@
 
 Coding problems are an essential way to develop problem-solving skills, improve logical thinking, and strengthen programming knowledge. They range from simple tasks like reversing a string to complex challenges involving data structures, algorithms, and optimization techniques. Solving these problems helps programmers understand fundamental concepts such as recursion, dynamic programming, graph traversal, and sorting algorithms.
 
-## Coding Problems - My Journey to Problem-Solving Excellence  
+## My Journey to Problem-Solving Excellence  
 
 Solving coding problems is an essential part of becoming a better programmer and improving problem-solving skills. Whether preparing for coding interviews, participating in competitive programming, or simply sharpening logical thinking, tackling a variety of algorithmic challenges is crucial. This repository is a collection of coding problems I have solved, covering a wide range of topics, including data structures, algorithms, dynamic programming, and system design. By consistently working on these problems, I aim to enhance my ability to write efficient, clean, and optimized code.  
 
