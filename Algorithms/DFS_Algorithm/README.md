@@ -39,3 +39,36 @@ Copy
 Edit
 1 → 2 → 4 → 5 → 3 → 6
 DFS explores deep (visiting 2, 4, 5 before 3).
+
+
+# DFS vs. BFS Comparison
+
+| Feature        | DFS (Depth-First Search) | BFS (Breadth-First Search) |
+|---------------|----------------------|----------------------|
+| **Uses** | Stack (Iterative) or Recursion | Queue |
+| **Explores** | Deepest node first | Nearest neighbors first |
+| **Memory Usage** | O(D) (depth of tree/graph) | O(W) (width of tree/graph) |
+| **Best for** | Deep structures (e.g., trees, backtracking) | Finding shortest paths (e.g., graphs, networks) |
+
+## **When to Use DFS vs. BFS?**
+- **Use DFS** when solving problems like:
+  - Maze solving
+  - Backtracking (e.g., Sudoku, N-Queens)
+  - Detecting cycles in a graph
+
+- **Use BFS** when solving problems like:
+  - Finding the shortest path (e.g., Dijkstra’s Algorithm)
+  - Level-order traversal in trees
+  - Social network connections (e.g., mutual friends)
+
+---
+
+### **📌 Steps to Upload to GitHub**
+1. Go to your GitHub repository.
+2. Click **"Add file" → "Create new file"**.
+3. Name the file **`README.md`**.
+4. Paste the content from above.
+5. Click **"Commit changes"**.
+
+Now, your README file will **display the table properly formatted** on GitHub! 🚀  
+Would you like to add anything else? 😊
