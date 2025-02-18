@@ -22,16 +22,39 @@ Iterative DFS (using a stack)
  4   5   6
 ```
 
-DFS traversal (starting from 1):
+# Depth-First Search (DFS) Execution Steps
 
-Step-by-Step DFS Traversal
-Step	Current Node	Action	Stack
-1	1	Visit 1, push neighbors 2, 3	[3, 2]
-2	2	Visit 2, push neighbors 4, 5	[3, 5, 4]
-3	4	Visit 4, no new neighbors	[3, 5]
-4	5	Visit 5, no new neighbors	[3]
-5	3	Visit 3, push neighbor 6	[6]
-6	6	Visit 6, no new neighbors	[]
+The table below demonstrates the step-by-step execution of **DFS traversal** on a sample graph.
+
+## **DFS Traversal Table**
+
+| Step | Current Node | Action | Stack |
+|------|-------------|--------|-------|
+| 1    | 1           | Visit 1, push neighbors 2, 3 | `[3, 2]` |
+| 2    | 2           | Visit 2, push neighbors 4, 5 | `[3, 5, 4]` |
+| 3    | 4           | Visit 4, no new neighbors | `[3, 5]` |
+| 4    | 5           | Visit 5, no new neighbors | `[3]` |
+| 5    | 3           | Visit 3, push neighbor 6 | `[6]` |
+| 6    | 6           | Visit 6, no new neighbors | `[]` |
+
+## **Key Takeaways**
+- DFS follows a **"deepest node first"** approach.
+- The **stack** helps backtrack when there are no more neighbors to visit.
+- The traversal order for this example is:  
+  **1 → 2 → 4 → 5 → 3 → 6**
+
+---
+
+### **📌 Steps to Upload to GitHub**
+1. Go to your GitHub repository.
+2. Click **"Add file" → "Create new file"**.
+3. Name the file **`README.md`**.
+4. Paste the content from above.
+5. Click **"Commit changes"**.
+
+Now, your table will **display properly formatted** on GitHub! 🚀  
+Would you like to add any more details? 😊
+
 
 
 Final DFS Order
