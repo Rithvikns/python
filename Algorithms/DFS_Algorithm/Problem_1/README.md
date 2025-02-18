@@ -28,11 +28,12 @@ If there is no next node and the stack is not empty:
 Pop a node from the stack and attach it as the next node.
 Set its previous pointer correctly.
 Continue until the entire list is processed.
-'''
+
+```console
 1 - 2 - 3 - 4 - 5 - 6
             |
             7 - 8 - 9 - 10
                 |
                11 - 12
-'''
+```
 1 - 2 - 3 - 7 - 8 - 11 - 12 - 9 - 10 - 4 - 5 - 6
