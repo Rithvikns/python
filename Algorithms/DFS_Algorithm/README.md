@@ -45,17 +45,6 @@ The table below demonstrates the step-by-step execution of **DFS traversal** on 
 
 ---
 
-### **📌 Steps to Upload to GitHub**
-1. Go to your GitHub repository.
-2. Click **"Add file" → "Create new file"**.
-3. Name the file **`README.md`**.
-4. Paste the content from above.
-5. Click **"Commit changes"**.
-
-Now, your table will **display properly formatted** on GitHub! 🚀  
-Would you like to add any more details? 😊
-
-
 
 Final DFS Order
 Copy
