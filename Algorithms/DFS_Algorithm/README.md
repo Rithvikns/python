@@ -14,13 +14,13 @@ DFS can be implemented in two ways:
 
 Recursive DFS (using function calls)
 Iterative DFS (using a stack)
-'''console
+```console
      1
     / \
    2   3
   / \   \
  4   5   6
-'''
+```
 
 DFS traversal (starting from 1):
 
