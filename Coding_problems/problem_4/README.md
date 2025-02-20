@@ -1,65 +1,133 @@
+# Python Decorators 🐍
+
+## 🔹 What is a Decorator?
+A **decorator** in Python is a function that modifies the behavior of another function or class **without modifying its code**. Decorators are useful for:
+
+✅ Logging 📜  
+✅ Authentication 🔑  
+✅ Performance measurement ⏳  
+✅ Access control 🔐  
+✅ Caching 🚀  
+
+---
+
+## 🔹 How Do Decorators Work?
+
+A decorator is a function that **wraps another function** to modify its behavior:
+
+```python
+# Basic decorator
+
+def decorator_function(original_function):
+    def wrapper_function(*args, **kwargs):
+        print(f"Wrapper executed before {original_function.__name__}")
+        return original_function(*args, **kwargs)
+    return wrapper_function
+
+@decorator_function  # Applying decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+```
+
+🔹 **Output:**
+```
+Wrapper executed before say_hello
+Hello!
+```
+
+---
+
+## 🔹 Types of Decorators
+
+### **1️⃣ Function Decorators**
+```python
+def uppercase_decorator(func):
+    def wrapper():
+        result = func()
+        return result.upper()
+    return wrapper
+
+@uppercase_decorator
+def greet():
+    return "hello, world"
+
+print(greet())  # Output: "HELLO, WORLD"
+```
+
+---
+
+### **2️⃣ Decorators with Arguments**
+```python
+def repeat(n):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(n):
+                func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@repeat(3)
+def greet():
+    print("Hello!")
+
+greet()  # Executes greet() 3 times
+```
+
+---
+
+### **3️⃣ Class Decorators**
+```python
+class Logger:
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        print(f"Calling {self.func.__name__}")
+        return self.func(*args, **kwargs)
+
+@Logger
+def display():
+    print("Executing function!")
+
+display()
+```
+
+---
+
+### **4️⃣ Built-in Decorators**
+Python provides built-in decorators like:
+
+| Decorator | Description |
+|-----------|-------------|
+| `@staticmethod` | Defines a static method inside a class (no `self` or `cls` needed). |
+| `@classmethod` | Defines a class method that receives `cls` as the first argument. |
+| `@property` | Allows method-like access to attributes. |
+
+```python
 class Example:
-    def __init__(self, value):
-        self.value = value
+    _value = 10
 
-    # Arithmetic Operators
-    def __add__(self, other):
-        return Example(self.value + other.value)
-    
-    def __sub__(self, other):
-        return Example(self.value - other.value)
-    
-    def __mul__(self, other):
-        return Example(self.value * other.value)
-    
-    def __truediv__(self, other):
-        return Example(self.value / other.value)
-    
-    # Comparison Operators
-    def __eq__(self, other):
-        return self.value == other.value
-    
-    def __lt__(self, other):
-        return self.value < other.value
-    
-    def __le__(self, other):
-        return self.value <= other.value
-    
-    # String Representation
-    def __str__(self):
-        return f"Example({self.value})"
-    
-    def __repr__(self):
-        return f"Example({self.value})"
-    
-    # Length
-    def __len__(self):
-        return abs(self.value)
-    
-    # Call method
-    def __call__(self, x):
-        return self.value + x
-    
-    # Indexing
-    def __getitem__(self, index):
-        return str(self.value)[index]
-    
-    # Iteration
-    def __iter__(self):
-        return iter(str(self.value))
+    @classmethod
+    def get_value(cls):
+        return cls._value
 
-# Example usage
-e1 = Example(10)
-e2 = Example(5)
+    @staticmethod
+    def info():
+        print("This is a static method.")
 
-print(e1 + e2)  # __add__
-print(e1 - e2)  # __sub__
-print(e1 * e2)  # __mul__
-print(e1 / e2)  # __truediv__
-print(e1 == e2)  # __eq__
-print(e1 < e2)  # __lt__
-print(len(e1))  # __len__
-print(e1(5))  # __call__
-print(e1[0])  # __getitem__
-for char in e1:  # __iter__
-    print(char)
+print(Example.get_value())  # Class method
+Example.info()  # Static method
+```
+
+---
+
+## 🔹 When to Use Decorators?
+✅ **Logging**: Track function calls.  
+✅ **Access Control**: Restrict function execution.  
+✅ **Performance Timing**: Measure function execution time.  
+✅ **Caching**: Store results to improve efficiency.  
+✅ **Validation**: Ensure inputs are valid.  
+
+🚀 **Happy Coding!** 🚀
