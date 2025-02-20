@@ -1,3 +1,25 @@
+# Understanding self
+The self keyword in Python is used within a class to refer to the instance of the object itself. It allows methods to access and modify the attributes of the instance.
+
+For example, in the __init__ method:
+```console
+def __init__(self, real, imaginary):
+    self.real = real
+    self.imaginary = imaginary
+```
+self.real refers to the real attribute of the specific instance.
+self.imaginary refers to the imaginary attribute.
+Similarly, in the __add__ method:
+```console
+def __add__(self, no):
+    return Complex(self.real + no.real, self.imaginary + no.imaginary)
+```
+self.real refers to the real part of the instance.
+no.real refers to the real part of the second complex number being added.
+Without self, Python wouldn’t know which instance’s attributes to access, making it essential for class-based object-oriented programming.
+
+
+
 # Hackerrank problem
 
 For this challenge, you are given two complex numbers, and you have to print the result of their addition, subtraction, multiplication, division and modulus operations.
