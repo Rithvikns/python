@@ -90,27 +90,30 @@ The real part is computed as ac−bd, and the imaginary part as ad+bc.
 
 
 ## Division (__truediv__ Method)
-
+```console
 def __truediv__(self, no):
     denominator = no.real**2 + no.imaginary**2
     real_part = (self.real * no.real + self.imaginary * no.imaginary) / denominator
     imaginary_part = (self.imaginary * no.real - self.real * no.imaginary) / denominator
     return Complex(real_part, imaginary_part)
+```
+
 Uses the formula: (c+di) * (a+bi) = (ac+bd)+(bc−ad)i
 ​
  The denominator is computed as (c**2 + d**2) to normalize the division.
  
 ##. Modulus (mod Method)
-
+```console
 def mod(self):
     return Complex((self.real**2 + self.imaginary**2) ** 0.5, 0)
+```
 The modulus (or magnitude) of a complex number a+bi is: ∣a+bi∣ = sqrt(a**2 + b**2)
 
 Returns a new Complex object with the magnitude as the real part and 0 as the imaginary part.
 
 
 ## String Representation (__str__ Method)
-
+```console
 def __str__(self):
     if self.imaginary == 0:
         result = "%.2f+0.00i" % (self.real)
@@ -124,6 +127,7 @@ def __str__(self):
     else:
         result = "%.2f-%.2fi" % (self.real, abs(self.imaginary))
     return result
+```
 This ensures proper formatting of the complex number:
 3+4i → "3.00+4.00i"
 -3-4i → "-3.00-4.00i"
