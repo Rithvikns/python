@@ -51,35 +51,39 @@ Explanation of the Code
 This Python class, Complex, implements basic arithmetic operations for complex numbers, including addition, subtraction, multiplication, division, and modulus. It also includes a string representation method for displaying complex numbers in a formatted way.
 
 ## Constructor (__init__ Method)
-"' console
+```console 
 def __init__(self, real, imaginary):
     self.real = real
     self.imaginary = imaginary
+```
 This initializes a complex number with a real part (self.real) and an imaginary part (self.imaginary).
 self refers to the instance of the class, allowing each object to have its own real and imaginary values.
-"'
+
 
 ## Addition (__add__ Method)
-
+``` console
 def __add__(self, no):
     return Complex(self.real + no.real, self.imaginary + no.imaginary)
+```
 Adds two complex numbers by separately adding their real and imaginary parts.
 Returns a new Complex object with the computed values.
 
 
 ## Subtraction (__sub__ Method)
-
+```console
 def __sub__(self, no):
     return Complex(self.real - no.real, self.imaginary - no.imaginary)
+```
 Subtracts two complex numbers by separately subtracting their real and imaginary parts.
 
 
 ## Multiplication (__mul__ Method)
-
+```console
 def __mul__(self, no):
     real_part = self.real * no.real - self.imaginary * no.imaginary
     imaginary_part = self.real * no.imaginary + self.imaginary * no.real
     return Complex(real_part, imaginary_part)
+```
 Uses the distributive property:
 (a+bi)×(c+di)=(ac−bd)+(ad+bc)i
 The real part is computed as ac−bd, and the imaginary part as ad+bc.
