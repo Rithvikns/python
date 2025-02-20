@@ -240,3 +240,67 @@ This ensures proper formatting of the complex number:
 3+4i → "3.00+4.00i"
 -3-4i → "-3.00-4.00i"
 Handles edge cases where the real or imaginary part is zero.
+
+## main function
+
+Breaking Down the Code
+```console
+c = map(float, input().split())  # Reads input, converts to floats
+d = map(float, input().split())  # Reads another input, converts to floats
+
+x = Complex(*c)  # Creates a Complex object from c
+y = Complex(*d)  # Creates a Complex object from d
+
+print(*map(str, [x+y, x-y, x*y, x/y, x.mod(), y.mod()]), sep='\n')
+```
+
+Step 1: Reading and Mapping Input
+When input().split() is used, it takes user input, splits it into parts (based on spaces), and returns a list of strings.
+
+For example, if the user inputs:
+
+2 3
+```console
+Then:
+input().split()  # → ["2", "3"]
+map(float, input().split())  # → [2.0, 3.0] (converted to floats)
+So, c = map(float, input().split()) converts "2 3" into map(float, ["2", "3"]), which results in an iterator yielding 2.0 and 3.0.
+```
+Similarly, d does the same for the second line of input.
+
+Step 2: Unpacking with *c
+Now, this line:
+```console
+x = Complex(*c)
+is equivalent to:
+x = Complex(2.0, 3.0)  # Unpacking [2.0, 3.0] into the Complex constructor
+This means:
+self.real = 2.0
+self.imaginary = 3.0
+Similarly, if the second input was "1 -4", then:
+y = Complex(*d)  # Equivalent to Complex(1.0, -4.0)
+```
+
+
+Understanding the Final Print Statement
+```console
+print(*map(str, [x+y, x-y, x*y, x/y, x.mod(), y.mod()]), sep='\n')
+[x+y, x-y, x*y, x/y, x.mod(), y.mod()] → Performs all operations and stores the results in a list.
+map(str, ...) → Converts each result to a string using the __str__ method of Complex.
+* (unpacking) → Passes the results as separate arguments to print, instead of as a list.
+sep='\n' → Prints each result on a new line.
+```
+Example Input and Output
+Input
+2 3
+1 -4
+Processing
+x = Complex(2, 3) (2 + 3i)
+y = Complex(1, -4) (1 - 4i)
+Compute:
+Addition: (2 + 3i) + (1 - 4i) = 3 - 1i
+Subtraction: (2 + 3i) - (1 - 4i) = 1 + 7i
+Multiplication: (2 + 3i) * (1 - 4i) = 14 + 5i
+Division: (2 + 3i) / (1 - 4i) = -0.58 + 0.64i
+Modulus of x: √(2² + 3²) = 3.61
+Modulus of y: √(1² + (-4)²) = 4.12
