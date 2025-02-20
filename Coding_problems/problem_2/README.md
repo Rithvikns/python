@@ -50,34 +50,32 @@ __mul__ -> Can be overloaded for * operation
 Explanation of the Code
 This Python class, Complex, implements basic arithmetic operations for complex numbers, including addition, subtraction, multiplication, division, and modulus. It also includes a string representation method for displaying complex numbers in a formatted way.
 
-1. Constructor (__init__ Method)
-python
-Copy
-Edit
+## Constructor (__init__ Method)
+
 def __init__(self, real, imaginary):
     self.real = real
     self.imaginary = imaginary
 This initializes a complex number with a real part (self.real) and an imaginary part (self.imaginary).
 self refers to the instance of the class, allowing each object to have its own real and imaginary values.
-2. Addition (__add__ Method)
-python
-Copy
-Edit
+
+
+## Addition (__add__ Method)
+
 def __add__(self, no):
     return Complex(self.real + no.real, self.imaginary + no.imaginary)
 Adds two complex numbers by separately adding their real and imaginary parts.
 Returns a new Complex object with the computed values.
-3. Subtraction (__sub__ Method)
-python
-Copy
-Edit
+
+
+## Subtraction (__sub__ Method)
+
 def __sub__(self, no):
     return Complex(self.real - no.real, self.imaginary - no.imaginary)
 Subtracts two complex numbers by separately subtracting their real and imaginary parts.
-4. Multiplication (__mul__ Method)
-python
-Copy
-Edit
+
+
+## Multiplication (__mul__ Method)
+
 def __mul__(self, no):
     real_part = self.real * no.real - self.imaginary * no.imaginary
     imaginary_part = self.real * no.imaginary + self.imaginary * no.real
@@ -85,6 +83,8 @@ def __mul__(self, no):
 Uses the distributive property:
 (a+bi)×(c+di)=(ac−bd)+(ad+bc)i
 The real part is computed as ac−bd, and the imaginary part as ad+bc.
+
+
 5. Division (__truediv__ Method)
 
 def __truediv__(self, no):
@@ -92,15 +92,9 @@ def __truediv__(self, no):
     real_part = (self.real * no.real + self.imaginary * no.imaginary) / denominator
     imaginary_part = (self.imaginary * no.real - self.real * no.imaginary) / denominator
     return Complex(real_part, imaginary_part)
-Uses the formula:
-
-(c+di)
-(a+bi)
-
-(ac+bd)+(bc−ad)i
+Uses the formula: (c+di) * (a+bi) = (ac+bd)+(bc−ad)i
 ​
- 
-The denominator is computed as (c**2 + d**2) to normalize the division.
+ The denominator is computed as (c**2 + d**2) to normalize the division.
 
 6. Modulus (mod Method)
 
