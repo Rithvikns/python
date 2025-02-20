@@ -1,7 +1,7 @@
 # Clash of Clans Builder Assignment Simulation
 
 ## problem Statement 
-I was playing clash of clans game and wanted to upgrade my town hall from 16
+I was playing clash of clans game and wanted to upgrade my town hall from 16 to 17 , but i want to first finish my archer tower and canon upgrade to level 21. So i wanted to calculate the least amount of time taken to upgrade all the neccessary upgrades required for the townhall 
 ## Overview
 This Python script simulates a builder assignment and upgrade system similar to the one found in Clash of Clans. It helps determine the optimal way to assign builders, manage upgrade times, and estimate the minimum time required to max out all buildings to level 21.
 
