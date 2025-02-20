@@ -18,6 +18,92 @@ self.real refers to the real part of the instance.
 no.real refers to the real part of the second complex number being added.
 Without self, Python wouldn’t know which instance’s attributes to access, making it essential for class-based object-oriented programming.
 
+# splat operator
+
+The splat operator (*) in Python is used for unpacking iterables and handling variable-length arguments. It comes in two forms: * (single asterisk) and ** (double asterisk). Here’s a breakdown of both:
+
+# Single Asterisk (*)
+
+Used for:
+
+Unpacking iterables (lists, tuples, strings)
+Handling variable-length positional arguments in function definitions
+Unpacking Iterables
+You can use * to unpack elements from a list or tuple:
+
+```console
+numbers = [1, 2, 3]
+print(*numbers)  # Output: 1 2 3
+
+a, *b, c = [10, 20, 30, 40]
+print(a)  # Output: 10
+print(b)  # Output: [20, 30]
+print(c)  # Output: 40
+```
+Using * in Function Arguments
+You can define functions that accept a variable number of arguments:
+
+```console
+def sum_all(*args):
+    return sum(args)
+
+print(sum_all(1, 2, 3, 4))  # Output: 10
+````
+Here, args collects all positional arguments into a tuple.
+
+Merging Lists
+You can use * to merge lists:
+
+```console
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+merged = [*list1, *list2]
+print(merged)  # Output: [1, 2, 3, 4, 5, 6]
+```
+
+## Double Asterisk (**)
+Used for:
+
+Unpacking dictionaries
+Handling variable-length keyword arguments in functions
+Unpacking Dictionaries
+You can use ** to unpack key-value pairs from a dictionary:
+
+```console
+data = {"name": "Alice", "age": 25}
+new_data = {**data, "city": "New York"}
+print(new_data)  # Output: {'name': 'Alice', 'age': 25, 'city': 'New York'}
+```
+Using ** in Function Arguments
+You can define functions that accept any number of keyword arguments:
+
+```console
+def greet(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+greet(name="Alice", age=25)  
+# Output:
+# name: Alice
+# age: 25
+```
+Here, kwargs collects all keyword arguments into a dictionary.
+
+Combining * and **
+You can use both in function definitions:
+
+```console
+def display(a, b, *args, c=10, **kwargs):
+    print(f"a: {a}, b: {b}, args: {args}, c: {c}, kwargs: {kwargs}")
+
+display(1, 2, 3, 4, 5, c=20, d=30, e=40)
+# Output:
+# a: 1, b: 2, args: (3, 4, 5), c: 20, kwargs: {'d': 30, 'e': 40}
+```
+Key Takeaways
+* (single asterisk) is used for unpacking iterables and handling variable-length positional arguments.
+** (double asterisk) is used for unpacking dictionaries and handling variable-length keyword arguments.
+Both can be used together for flexible function definitions.
 
 
 # Hackerrank problem
