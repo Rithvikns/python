@@ -85,7 +85,7 @@ Uses the distributive property:
 The real part is computed as ac−bd, and the imaginary part as ad+bc.
 
 
-5. Division (__truediv__ Method)
+## Division (__truediv__ Method)
 
 def __truediv__(self, no):
     denominator = no.real**2 + no.imaginary**2
@@ -95,8 +95,8 @@ def __truediv__(self, no):
 Uses the formula: (c+di) * (a+bi) = (ac+bd)+(bc−ad)i
 ​
  The denominator is computed as (c**2 + d**2) to normalize the division.
-
-6. Modulus (mod Method)
+ 
+##. Modulus (mod Method)
 
 def mod(self):
     return Complex((self.real**2 + self.imaginary**2) ** 0.5, 0)
@@ -105,7 +105,7 @@ The modulus (or magnitude) of a complex number a+bi is: ∣a+bi∣ = sqrt(a**2 +
 Returns a new Complex object with the magnitude as the real part and 0 as the imaginary part.
 
 
-7. String Representation (__str__ Method)
+## String Representation (__str__ Method)
 
 def __str__(self):
     if self.imaginary == 0:
