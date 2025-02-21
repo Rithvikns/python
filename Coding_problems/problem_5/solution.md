@@ -1,4 +1,4 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+```python
 import re 
 
 N = int(input())
@@ -17,10 +17,11 @@ for tag_match in tag_pattern.finditer(HTML_file):
         attribute_name = attribute_match.group(1)
         attribute_value = attribute_match.group(2)
         print(f"-> {attribute_name} > {attribute_value}")
-        
-        
-"""
-Explanation:
+
+```
+
+
+# Explanation:
 
 1. **Reading Input:**
    - The first input line contains an integer `N`, which indicates the number of subsequent lines.
@@ -45,8 +46,4 @@ Explanation:
    - Each tag name is printed.
    - Each attribute and its corresponding value are printed in the format: `-> attribute > value`.
 
-Example Input:
-```
-1
-<meta http-equiv="refresh" content="5;url=http://example.com/" />
-```
+
