@@ -1,3 +1,8 @@
+# Problem Statement
+
+This ia a hackerrank problem
+
+
 You are given an HTML code snippet of  lines.
 Your task is to detect and print all the HTML tags, attributes and attribute values.
 
@@ -35,7 +40,7 @@ Print the HTML tags, attributes and attribute values in order of their occurrenc
 Format your answers as explained in the problem statement.
 
 Sample Input
-
+```console
 9
 <head>
 <title>HTML</title>
@@ -46,8 +51,9 @@ Sample Input
   <!-- <param name="movie" value="your-file.swf" /> -->
   <param name="quality" value="high"/>
 </object>
+```
 Sample Output
-
+```console
 head
 title
 object
@@ -58,6 +64,9 @@ object
 param
 -> name > quality
 -> value > high
+```
+
+
 Explanation
 
 head tag: Print the head tag only because it has no attribute.
