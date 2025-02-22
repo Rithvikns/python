@@ -38,7 +38,26 @@ The **Trie structure** will look like:
 (3)(2)(5)(8)(10)(25)     
 ```
 ---
+# How the Code Works
 
+TrieNode Class:
+
+Each node stores its children (binary 0 and 1).
+A value field at the leaf node holds the final number.
+
+Trie Class:
+
+insert(num): Converts num to 5-bit binary and inserts it bit by bit.
+find_max_xor(num):
+Traverses the Trie, choosing opposite bits when possible for maximum XOR.
+Returns the number that maximizes XOR and the XOR result.
+
+Main Execution:
+
+Numbers are inserted into the Trie.
+The script finds the two numbers that produce the maximum XOR.
+
+---
 ## **How the Trie Helps Find Maximum XOR**
 For each number, we traverse the Trie trying to pick **opposite bits** to maximize XOR.
 
