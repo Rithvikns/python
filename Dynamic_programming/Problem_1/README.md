@@ -1,7 +1,7 @@
-#### Problem Statement:
+# Problem Statement:
 Given a string `s`, find the length of the longest subsequence that is a palindrome.
 
-#### Solution Using DP:
+# Solution Using DP:
 We use **bottom-up tabulation** to efficiently solve LPS in `O(n^2)` time complexity.
 
 ```python
@@ -31,7 +31,7 @@ s = "bbbab"
 print(longest_palindromic_subsequence(s))  # Output: 4
 ```
 
-#### Explanation:
+# Explanation:
 1. **Initialize DP Table**: Create a 2D table where `dp[i][j]` stores the LPS length for substring `s[i:j+1]`.
 2. **Base Case**: Single characters are palindromes of length 1.
 3. **Fill Table Iteratively**: If `s[i] == s[j]`, expand the LPS by 2; otherwise, take the maximum from adjacent subproblems.
