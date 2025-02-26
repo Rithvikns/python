@@ -3,7 +3,7 @@
 TensorFlow is an open-source machine learning framework developed by Google Brain. It is widely used for deep learning applications and provides tools for training and deploying machine learning models.
 
 ## Features of TensorFlow
-- **Scalability**: Supports CPUs, GPUs, and TPUs for efficient computation.
+- **Scalability**: Supports CPUs, GPUs, and TPUs(Tensor Processing Units (TPUs) are Google's custom-developed application-specific integrated circuits (ASICs) used to accelerate machine learning workloads) for efficient computation.
 - **Flexibility**: Works with deep learning, reinforcement learning, and traditional machine learning.
 - **Ecosystem**: Includes TensorFlow Hub, TensorFlow Extended (TFX), and TensorFlow Lite.
 - **Auto Differentiation**: Uses TensorFlow’s `tf.GradientTape` for automatic differentiation.
