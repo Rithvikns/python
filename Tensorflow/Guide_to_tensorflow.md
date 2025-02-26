@@ -1,9 +1,6 @@
 # Comprehensive Guide to TensorFlow
 
-## Introduction
-TensorFlow is an open-source deep learning framework developed by Google for machine learning, deep learning, and AI applications. It provides flexibility and ease in designing and training neural networks.
 
----
 ## Key Concepts in TensorFlow
 
 ### 1. Tensors
