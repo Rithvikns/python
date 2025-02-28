@@ -14,6 +14,8 @@ model = models.Sequential([
 # Code Breakdown
 1) The model is sequential so the input image is passed through the first layer , The image shape is 32x32 pixels and 3 colors RGB to represent the image.
 layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3))
+
+
 The convolution 2D layer applies 32 filters of size 3x3 pixels and the output size is determined using the formula:
 
 Output Size = ((Input Size - Filter Size + 2 × Padding)/Stride) + 1
