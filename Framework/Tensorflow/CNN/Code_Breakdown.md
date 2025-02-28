@@ -12,7 +12,8 @@ model = models.Sequential([
 ])
 ```
 # Code Breakdown
-1) The model is sequential so the input image is passed through the first layer , The image shape is 32x32 pixels and 3 colors RGB to represent the image.
+## Step 1
+The model is sequential so the input image is passed through the first layer , The image shape is 32x32 pixels and 3 colors RGB to represent the image.
 layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3))
 
 
@@ -52,4 +53,4 @@ So, the output shape of this layer is (30, 30, 32).
 
 This means that each filter creates a new feature map of size 30x30.
 
-2) 
+## Step 2
