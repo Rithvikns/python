@@ -51,11 +51,37 @@ model = models.Sequential([
     layers.Dense(10, activation='softmax')
 ])
 ```
-The CNN consists of:
-- **Three convolutional layers** with ReLU activation
-- **Two max pooling layers** to reduce feature map size
-- **Flatten layer** to convert feature maps into a 1D array
-- **Dense layers** for classification, using softmax activation for multi-class probability output
+#### Explanation of Layers:
+1. **`Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3))`**:
+   - Applies **32 filters** of size **3x3** to detect features in the input image.
+   - Uses **ReLU activation** to introduce non-linearity.
+   - Takes input images of shape **(32, 32, 3)** (RGB image).
+
+2. **`MaxPooling2D((2, 2))`**:
+   - Performs **down-sampling** to reduce the spatial dimensions of feature maps.
+   - Takes the maximum value in each **2x2** region, reducing computation and improving generalization.
+
+3. **`Conv2D(64, (3, 3), activation='relu')`**:
+   - Another convolutional layer with **64 filters** of size **3x3**.
+   - Helps the network learn more complex patterns.
+
+4. **`MaxPooling2D((2, 2))`**:
+   - Further reduces the feature map size, preventing overfitting.
+
+5. **`Conv2D(128, (3, 3), activation='relu')`**:
+   - Third convolutional layer with **128 filters** of size **3x3**.
+   - Extracts deeper image features.
+
+6. **`Flatten()`**:
+   - Converts the 2D feature maps into a **1D vector** so they can be processed by the fully connected layers.
+
+7. **`Dense(128, activation='relu')`**:
+   - A fully connected layer with **128 neurons** and **ReLU activation**.
+   - Captures complex representations from extracted features.
+
+8. **`Dense(10, activation='softmax')`**:
+   - The output layer with **10 neurons** (one per class in CIFAR-10).
+   - Uses **softmax activation** to output class probabilities.
 
 ### 4. Compiling the Model
 ```python
