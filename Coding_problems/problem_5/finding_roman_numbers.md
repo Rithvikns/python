@@ -20,7 +20,7 @@ The following regular expression is used to validate a Roman numeral:
 
 ```regex
 ^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$
-
+```
 Breakdown:
 M{0,3} → Matches 0 to 3 M's (1000, 2000, 3000).
 (CM|CD|D?C{0,3}) → Matches:
