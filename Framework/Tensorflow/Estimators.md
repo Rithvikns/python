@@ -30,6 +30,39 @@ TensorFlow Estimators are high-level APIs that simplify machine learning model d
 - Built-in error handling and logging.
 - Seamless integration with TensorFlow’s data pipeline.
 - Simplifies distributed training.
+## Example
+```python
+import tensorflow as tf
 
+# Define feature columns
+feature_columns = [tf.feature_column.numeric_column("x", shape=[1])]
+
+# Define an estimator (DNN with one hidden layer)
+estimator = tf.estimator.DNNClassifier(
+    feature_columns=feature_columns,
+    hidden_units=[10],
+    n_classes=2
+)
+
+# Input function
+def input_fn():
+    dataset = tf.data.Dataset.from_tensor_slices(({"x": [1.0, 2.0, 3.0, 4.0]}, [0, 1, 0, 1]))
+    return dataset.batch(2).repeat()
+
+# Train the estimator
+estimator.train(input_fn, steps=100)
+
+# Evaluate the estimator
+eval_result = estimator.evaluate(input_fn, steps=10)
+print(f"Evaluation results: {eval_result}")
+
+# Predict using the estimator
+predict_input_fn = lambda: tf.data.Dataset.from_tensor_slices({"x": [5.0, 6.0]}).batch(1)
+predictions = estimator.predict(predict_input_fn)
+
+print("Predictions:")
+for pred in predictions:
+    print(pred)
+```
 ## Conclusion:
 TensorFlow Estimators provide a robust and scalable way to develop ML models with minimal boilerplate code. They are widely used in production environments due to their efficiency and ease of deployment.
