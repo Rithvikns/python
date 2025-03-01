@@ -107,3 +107,33 @@ Code: layers.Dense(128, activation='relu')
 
 This prepares the model for further classification or output layers.
 """
+## Step 8: Final Dense Layer with Softmax Activation
+
+Code: layers.Dense(10, activation='softmax')
+
+- This is the final layer, typically used for **multi-class classification**.
+- The **10 neurons** correspond to **10 possible classes** (e.g., CIFAR-10 dataset).
+- Computes: `Z = W * X + B`, where:
+    - **X** = input vector (128 values)
+    - **W** = weight matrix (128 × 10)
+    - **B** = bias vector (10 values)
+    - **Z** = output vector (10 values)
+
+- **Softmax Activation Function**:
+    - Converts raw scores (**logits**) into **probabilities**.
+    - Formula:
+
+      \[
+      P_i = \frac{e^{Z_i}}{\sum_{j=1}^{10} e^{Z_j}}
+      \]
+
+    - Ensures that all outputs sum to **1**, making it a **valid probability distribution**.
+
+- Example Output:
+  ```
+  [0.02, 0.01, 0.05, 0.10, 0.07, 0.03, 0.20, 0.30, 0.12, 0.10]
+  ```
+  - The **highest probability** determines the predicted class.
+
+
+
