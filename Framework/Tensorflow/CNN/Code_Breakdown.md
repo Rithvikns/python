@@ -54,3 +54,51 @@ So, the output shape of this layer is (30, 30, 32).
 This means that each filter creates a new feature map of size 30x30.
 
 ## Step 2
+
+The next layer is layers.MaxPooling2D((2, 2) . Here in this layer you are downscaling the spatial dimension of feature maps further while keeping the most important information.
+Pool size = (2,2): This means we take the maximum value from each 2×2 region.
+Stride = (2,2) (default): The window moves 2 pixels right/down at a time, reducing the size by half.
+Output Size
+=
+Input Size
+Pool Size
+Output Size= 
+Pool Size
+Input Size
+​
+ 
+Output Height
+=
+30
+2
+=
+15
+Output Height= 
+2
+30
+​
+ =15
+Output Width
+=
+30
+2
+=
+15
+Output Width= 
+2
+30
+​
+ =15
+Output Channels
+=
+32
+Output Channels=32
+Final Output Shape:
+(
+15
+,
+15
+,
+32
+)
+(15,15,32)
