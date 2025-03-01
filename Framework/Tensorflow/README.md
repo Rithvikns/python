@@ -79,7 +79,52 @@ To serve a trained model:
 ```sh
 tensorflow_model_server --rest_api_port=8501 --model_name=my_model --model_base_path=/models/my_model/
 ```
+## tf.Variable
+tf.Variable is used to store and update model parameters (such as weights and biases) during training. It maintains state across multiple function calls and is trainable by default.
 
+Key Features:
+
+
+- Holds mutable tensors that persist across different computations.
+- Automatically tracks changes for gradient computation during backpropagation.
+- Used in defining deep learning models.
+
+  
+Example:
+python
+```console
+import tensorflow as tf
+
+# Define a variable with an initial value
+x = tf.Variable(initial_value=5.0, trainable=True)
+
+# Update its value
+x.assign(10.0)  # Changes the value of x to 10
+print(x.numpy())  # Output: 10.0
+```
+
+## tf.placeholder (Deprecated in TF 2.x)
+
+tf.placeholder was used in TensorFlow 1.x to create a tensor whose values are fed at runtime.
+It was primarily used to build computational graphs without providing input data immediately.
+
+
+In TensorFlow 2.x, tf.function and eager execution replace tf.placeholder.
+Example (TensorFlow 1.x, NOT recommended for TF 2.x)
+```python
+import tensorflow as tf
+
+x = tf.placeholder(dtype=tf.float32, shape=[None, 3])  # A placeholder for a batch of 3-element vectors
+```
+## Alternative in TensorFlow 2.x:
+Use tf.function and pass tensors as arguments instead.
+```console
+@tf.function
+def compute(x):
+    return x * 2
+
+print(compute(tf.constant([1, 2, 3])))
+```
 ## Useful Resources
 - [Official Documentation](https://www.tensorflow.org/)
 - [GitHub Repository](https://github.com/tensorflow/tensorflow)
