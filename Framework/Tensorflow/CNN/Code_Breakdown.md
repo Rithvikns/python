@@ -4,6 +4,7 @@ import tensorflow as tf
 from tensorflow.keras import layers, models
 
 # Define the CNN Model
+```python
 model = models.Sequential([
     layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)),
     layers.MaxPooling2D((2, 2)),
@@ -14,6 +15,7 @@ model = models.Sequential([
     layers.Dense(128, activation='relu'),
     layers.Dense(10, activation='softmax')
 ])
+```
 
 # Summary of the Model
 model.summary()
