@@ -17,13 +17,9 @@ model = models.Sequential([
 ])
 ```
 
-# Summary of the Model
-model.summary()
-
 # Code Breakdown
 
-"""
-Step 1: Input Layer & First Convolutional Layer
+## Step 1: Input Layer & First Convolutional Layer
 
 - The model is sequential, so the input image is passed through the first layer.
 - The image shape is (32,32,3), meaning 32x32 pixels with 3 color channels (RGB).
@@ -47,7 +43,7 @@ Output Channels = 32
 So, the output shape of this layer is (30, 30, 32).
 Each filter creates a new feature map of size 30x30.
 
-Step 2: Max Pooling Layer
+## Step 2: Max Pooling Layer
 
 - The next layer, layers.MaxPooling2D((2,2)), reduces the spatial dimensions of feature maps.
 - Pool size = (2,2): It takes the maximum value from each 2×2 region.
@@ -63,4 +59,51 @@ Output Channels = 32 (unchanged)
 Final Output Shape: (15, 15, 32)
 """
 
-# Additional layers follow the same pattern, progressively reducing spatial dimensions and increasing depth.
+## Step 3 : layers.Conv2D(64, (3, 3), activation='relu')
+
+This would be the same as first step but the input is (15,15,32)
+Output Height = (15 - 3 + 0) + 1 = 13
+Output Width = (15 - 3 + 0) + 1 = 13
+Output Channels = 64
+So, the output shape of this layer is (13, 13, 64).
+
+## Step 4 : layers.MaxPooling2D((2, 2))
+
+This would be the same as first step but the input is (15,15,32)
+If the input size is not divisible by maxpooling layer it excludes the last row and column and make it divisible 
+Output Height = 13 / 2 = 6
+Output Width = 13 / 2 = 6
+Output Channels = 64 (unchanged)
+So, the output shape of this layer is (6, 6, 64).
+
+## Step 5 : layers.Conv2D(128, (3, 3), activation='relu')
+
+Output Height = (6 - 3 + 0) + 1 = 4
+Output Width = (6 - 3 + 0) + 1 = 4
+Output Channels = 128
+So, the output shape of this layer is (4, 4, 128).
+
+## Step 6 : layers.Flatten()
+
+It removes the spatial structure and reshapes the tensor into a 1D array.
+
+The total number of elements is calculated as: 4×4×128=2048
+The output shape becomes (2048,) which is a 1D vector with 2048 elements.
+
+## Step 7: Dense Layer with ReLU Activation
+
+Code: layers.Dense(128, activation='relu')
+
+- The `Dense(128)` layer contains 128 neurons, fully connected to the previous 2048 inputs.
+- Computes: `Z = W * X + B` where:
+    - **X** = input vector (2048 values)
+    - **W** = weight matrix (2048 × 128)
+    - **B** = bias vector (128 values)
+    - **Z** = output vector (128 values)
+- ReLU Activation:
+    - If `Z > 0`, it remains unchanged.
+    - If `Z <= 0`, it becomes 0.
+- Output Shape: (128,)
+
+This prepares the model for further classification or output layers.
+"""
