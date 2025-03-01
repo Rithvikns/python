@@ -136,4 +136,65 @@ Code: layers.Dense(10, activation='softmax')
   - The **highest probability** determines the predicted class.
 
 
+# Understanding `model.compile()`
+
+The `model.compile()` function configures the model for training by defining:
+1. **Optimizer** - How the model updates its weights.
+2. **Loss Function** - How the model measures its error.
+3. **Metrics** - What performance metric it tracks.
+
+## Breaking Down the Code
+```python
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+```
+
+### 1️⃣ Optimizer: `optimizer='adam'`
+- Adam (**Adaptive Moment Estimation**) is an advanced optimization algorithm.
+- It adjusts the learning rate dynamically for each parameter.
+- It combines **momentum-based gradient descent** and **RMSprop** to improve convergence.
+- **Benefits:**
+  - ✅ Faster training  
+  - ✅ Works well with large datasets  
+  - ✅ Handles noisy data effectively  
+
+---
+
+### 2️⃣ Loss Function: `loss='sparse_categorical_crossentropy'`
+- Used when **labels are integers (not one-hot encoded)**.
+- Example:
+  ```python
+  y_true = [0, 2, 1, 3]  # Integer labels
+  ```
+- It calculates the **difference between predicted probabilities and true class labels**.
+- Formula:
+  
+  \[
+  L = -\sum y_i \log(\hat{y}_i)
+  \]
+  
+  - \( y_i \) = True label (integer class index)
+  - \( \hat{y}_i \) = Predicted probability from the softmax layer
+
+- If your labels were **one-hot encoded**, you’d use:
+  ```python
+  loss='categorical_crossentropy'
+  ```
+
+---
+
+### 3️⃣ Metrics: `metrics=['accuracy']`
+- **Tracks model performance** on the validation set.
+- **Accuracy** measures how often the predicted class matches the true label.
+- Works well for **balanced datasets** (equal distribution of classes).
+- If the dataset is imbalanced, consider **F1-score or AUC**.
+
+---
+
+## Summary
+✅ **Adam optimizer** → Adaptive learning rate for efficient training  
+✅ **Sparse categorical cross-entropy** → Used when labels are integers  
+✅ **Accuracy metric** → Tracks model performance  
+
 
