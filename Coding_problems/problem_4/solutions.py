@@ -25,7 +25,7 @@ def handle_exceptions(func):
         try:
             return func(*args, **kwargs)
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(f"An error occurred due to : {e}")
             return None
     return wrapper
 
