@@ -73,6 +73,4 @@ Each iteration generates a different graph:
 This experiment showcases PyTorch’s dynamic computation graph updates in action. Each forward pass results in a unique graph, illustrating the flexible nature of PyTorch’s autograd system.
 
 ---
-**Author:** [Your Name]  
-**Repository:** [GitHub Link]
 
