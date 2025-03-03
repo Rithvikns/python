@@ -50,8 +50,23 @@
     - Realme X2/X3 Pro : Realme also leverages PyTorch Mobile for AI applications in real-time processing.
 - TensorFlow Lite is more widely integrated into smartphones, especially for Android devices from Google, Samsung, and Xiaomi.
 - PyTorch Mobile is gaining traction, but it is still less ubiquitous than TensorFlow Lite, with devices like Google Pixel, OnePlus, and Xiaomi featuring it.
+- TPUs are specialized hardware designed to accelerate tensor operations, and they are usually found in Google's data centers, cloud environments, or some Google Pixel devices like pixel 3 (with the EdgeTPU).
+- Neural Engine: Some newer iPhones and iPads (from the A11 Bionic chip onward) include a Neural Engine (a specialized hardware component for AI and machine learning). TensorFlow Lite can take advantage of the Neural Engine for faster inference of machine learning models.
 
-## 🔄 6. Distributed Training & Scalability
+## 🤖 6. Nvidia Drive PX
+### Drive PX Hardware (AI Chips):
+- GPU (Graphics Processing Unit): The Drive PX platform uses NVIDIA GPUs, typically from the Tesla or Xavier series, which are high-performance GPUs capable of parallel processing for AI and deep learning tasks.
+- Deep Learning Accelerators (DLA): Specialized hardware that accelerates deep learning operations, particularly for tasks like image recognition and sensor fusion.
+- CPU (Central Processing Unit): For running general-purpose tasks, including managing system resources and coordinating AI tasks.
+- Tensor Cores: The GPUs in Drive PX are equipped with Tensor Cores, specialized hardware units that accelerate matrix multiplications, which are key operations for training and running machine learning models (like neural networks). These cores are particularly useful for handling tensors (multi-dimensional data), which are the core of deep learning operations.
+### Sensor Fusion:
+- Multiple Sensors: The system integrates data from cameras, LiDAR, radar, ultrasonic sensors, and other sources to create a comprehensive understanding of the car’s surroundings.
+- Sensor Fusion Algorithms: Drive PX processes these sensor inputs simultaneously, using machine learning models to understand the environment (e.g., identifying pedestrians, road signs, other vehicles).
+### AI Processing for Driving:
+- Inference: Drive PX runs pre-trained deep learning models for tasks like object detection (identifying cars, pedestrians), lane detection, traffic light recognition, etc. The AI chip accelerates the inference phase, which is the step where the model makes predictions based on the input data (like images or sensor data).
+- Autonomous Decision-Making: It combines real-time sensor data with AI algorithms to make decisions, like steering, braking, and accelerating. This requires high computational power, and the Drive PX platform is designed for this kind of task.
+
+## 🔄 7. Distributed Training & Scalability
 - PyTorch: Uses torch.nn.parallel, easier to implement but less optimized.
 - TensorFlow: Uses tf.distribute.Strategy, more complex but better scaling across multiple GPUs & TPUs.
 
