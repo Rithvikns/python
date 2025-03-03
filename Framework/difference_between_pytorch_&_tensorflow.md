@@ -48,7 +48,8 @@
     - Xiaomi Mi Mix 4 : Xiaomi phones can run PyTorch models for machine vision applications, like background blurring or augmented reality.
     - Oppo Reno Series : Oppo integrates PyTorch Mobile for applications such as object recognition and camera features.
     - Realme X2/X3 Pro : Realme also leverages PyTorch Mobile for AI applications in real-time processing.
-
+- TensorFlow Lite is more widely integrated into smartphones, especially for Android devices from Google, Samsung, and Xiaomi.
+- PyTorch Mobile is gaining traction, but it is still less ubiquitous than TensorFlow Lite, with devices like Google Pixel, OnePlus, and Xiaomi featuring it.
 
 ## 🔄 6. Distributed Training & Scalability
 - PyTorch: Uses torch.nn.parallel, easier to implement but less optimized.
