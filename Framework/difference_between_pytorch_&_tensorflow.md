@@ -17,33 +17,43 @@
 ## 🚀 1. Ease of Use & Debugging
 - PyTorch is more Pythonic and easier to learn, making it a favorite in research & academia.
 - TensorFlow requires some setup (@tf.function) and debugging static graphs is harder.
-- ✅ **Winner: PyTorch (more user-friendly).**
+
 
 ## ⚡ 2. Performance & Optimization
 - TensorFlow compiles models into static graphs for better optimization.
 - TensorFlow uses XLA (Accelerated Linear Algebra) to optimize execution.
 - PyTorch is improving with TorchScript, but still slower in production.
-- ✅ **Winner: TensorFlow (better performance & optimizations).**
+
 
 ## 🌍 3. Deployment & Production
 - TensorFlow has better deployment tools (TensorFlow Serving, TensorFlow Lite, TensorFlow.js).
 - PyTorch relies on third-party tools like TorchServe or exporting to ONNX.
-- ✅ **Winner: TensorFlow (better deployment support).**
+
 
 ## 📈 4. Visualization & Monitoring
 - TensorFlow integrates TensorBoard for monitoring training metrics & graph visualization.
 - PyTorch has torch.utils.tensorboard, but it’s not as powerful as TensorFlow's native support.
-- ✅ **Winner: TensorFlow (better visualization).**
+
 
 ## 🤖 5. TPU & Mobile Support
 - TensorFlow has first-class support for TPUs & mobile inference (TF Lite, TF.js).
+    - Google Pixel Series (Pixel 3, 4, 5, 6, 7, etc.) : Pixel phones often feature TensorFlow Lite for machine learning tasks like image recognition, speech processing, and other AI powered functionalities.
+    - Samsung Galaxy Series (S20, S21, S22, and newer) : Samsung has integrated TensorFlow Lite for various AI features in their camera and voice assistant systems.
+    - OnePlus Devices (OnePlus 8, 9, 10 series) : OnePlus integrates TensorFlow Lite for AI features such as facial recognition and camera enhancements.
+    - Xiaomi Devices (Mi 11, Mi 10, Mi Mix series) : Xiaomi uses TensorFlow Lite to power AI functionalities in their phones, like image processing and smart camera features.
+    - Motorola Edge Series : Motorola phones use TensorFlow Lite for AI-based applications like object detection and gesture control.
 - PyTorch has experimental TPU support & PyTorch Mobile, but it's less optimized.
-- ✅ **Winner: TensorFlow (better TPU & mobile support).**
+    - Google Pixel 4/5 : Google uses both TensorFlow Lite and PyTorch for specific machine learning tasks across their devices.
+    - OnePlus 8/9 : OnePlus phones support PyTorch Mobile for AI features like real-time object detection and augmented reality.
+    - Xiaomi Mi Mix 4 : Xiaomi phones can run PyTorch models for machine vision applications, like background blurring or augmented reality.
+    - Oppo Reno Series : Oppo integrates PyTorch Mobile for applications such as object recognition and camera features.
+    - Realme X2/X3 Pro : Realme also leverages PyTorch Mobile for AI applications in real-time processing.
+
 
 ## 🔄 6. Distributed Training & Scalability
 - PyTorch: Uses torch.nn.parallel, easier to implement but less optimized.
 - TensorFlow: Uses tf.distribute.Strategy, more complex but better scaling across multiple GPUs & TPUs.
-- ✅ **Winner: TensorFlow (better large-scale training support).**
+
 
 ## 🎯 Which One Should You Use?
 
