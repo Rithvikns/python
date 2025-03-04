@@ -2,6 +2,7 @@
 # Structural Design Patterns in Python
 
 This file contains information about structural design patterns.
+To learn more about the topic you can visit : https://refactoring.guru/design-patterns/catalog
 
 ## Structural Design Patterns
 Structural design patterns help define clear relationships between objects and classes, making large systems easier to manage and scale.
