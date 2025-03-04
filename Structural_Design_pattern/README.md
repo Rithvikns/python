@@ -1,5 +1,5 @@
-"""
-Structural Design Patterns in Python
+
+# Structural Design Patterns in Python
 
 This file contains information about structural design patterns.
 
