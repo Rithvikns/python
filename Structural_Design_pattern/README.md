@@ -39,5 +39,5 @@ Structural design patterns help define clear relationships between objects and c
 - Useful for implementing lazy loading, access control, logging, etc.
 
 These patterns help improve code maintainability, flexibility, and reusability in large-scale software design.
-"""
+
 
