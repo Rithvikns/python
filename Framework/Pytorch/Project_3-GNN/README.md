@@ -30,42 +30,39 @@ gnn_pytorch.py
 This Python script demonstrates the entire process of creating a simple graph, defining a GNN, performing a forward pass, and visualizing the results.
 
 ## 🖥️ Code Explanation
-1. Graph Data (Edges and Weights)
+### 1. Graph Data (Edges and Weights)
 We define the graph with nodes, edges, and edge weights.
 
 Edges are represented as pairs of node indices (source, target).
 Weights are associated with the edges to signify the strength of connections.
-python
-Copy
-Edit
+``` python
 edges = torch.tensor([[0, 1, 2, 3], [1, 2, 3, 0]], dtype=torch.long)  # (source, target)
 weights = torch.tensor([0.5, 0.8, 0.6, 0.9], dtype=torch.float)  # Edge weights
+```
 edges: A tensor representing the source and target nodes of the edges in the graph.
 weights: A tensor representing the weights of each edge.
-2. Node Features
+
+### 2. Node Features
 In this example, we generate random node features (3-dimensional) for each node. These node features could represent attributes like node degree, centrality, or any other property relevant to the problem.
 
-python
-Copy
-Edit
+``` python
 node_features = torch.rand((num_nodes, 3))
 node_features: A tensor with shape (num_nodes, num_features). Here, num_nodes=4 and each node has 3 random features.
-3. PyTorch Geometric Data Object
+```
+
+### 3. PyTorch Geometric Data Object
 Next, we combine the graph's nodes, edges, and weights into a PyTorch Geometric Data object.
 
-python
-Copy
-Edit
+```python
 graph_data = Data(x=node_features, edge_index=edges, edge_attr=weights)
+```
 x: Node features.
 edge_index: List of edges (source, target).
 edge_attr: Edge attributes (weights).
-4. Graph Neural Network Model
+### 4. Graph Neural Network Model
 We define a simple Graph Convolutional Network (GCN) model using two graph convolutional layers (GCNConv).
 
-python
-Copy
-Edit
+```python
 class SimpleGNN(torch.nn.Module):
     def __init__(self):
         super(SimpleGNN, self).__init__()
@@ -78,24 +75,22 @@ class SimpleGNN(torch.nn.Module):
         x = F.relu(x)
         x = self.conv2(x, edge_index)
         return x
+```
 GCNConv(3, 16): The first layer transforms the node features from 3 to 16 dimensions.
 GCNConv(16, 2): The second layer reduces the node features from 16 to 2 dimensions (for binary classification, for example).
 ReLU Activation is applied between the layers.
-5. Forward Pass and Output
+### 5. Forward Pass and Output
 We perform a forward pass through the model to get the transformed node features.
 
-python
-Copy
-Edit
+```python
 model = SimpleGNN()
 output = model(graph_data)
+```
 The output contains the final node features after passing through the GCN layers.
-6. Graph Visualization
+### 6. Graph Visualization
 We use NetworkX to visualize the graph and Matplotlib to display it.
 
-python
-Copy
-Edit
+```python
 G = nx.DiGraph()
 for i in range(edges.shape[1]):
     G.add_edge(int(edges[0, i]), int(edges[1, i]), weight=weights[i].item())
@@ -106,14 +101,15 @@ nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=2000, font_s
 nx.draw_networkx_edge_labels(G, pos, edge_labels={(int(edges[0, i]), int(edges[1, i])): f'{weights[i]:.2f}' for i in range(edges.shape[1])})
 plt.title("Graph Representation of Structured Data")
 plt.show()
+```
 NetworkX creates the graph and Matplotlib handles the visualization.
 Each edge is annotated with its corresponding weight.
-🧠 Model Forward Pass and Visualization Output
+## 🧠 Model Forward Pass and Visualization Output
 Node Features Output: After performing a forward pass through the GCN, you will see the updated node features (a tensor with shape (num_nodes, 2)).
 
 Graph Visualization: A plot showing the graph structure with nodes, edges, and edge weights.
 
-📌 Conclusion
+## 📌 Conclusion
 This simple script demonstrates how to:
 
 Build a graph in PyTorch Geometric.
@@ -122,8 +118,8 @@ Perform a forward pass to get node representations.
 Visualize the graph using NetworkX and Matplotlib.
 You can extend this to implement more complex GNN architectures like Graph Attention Networks (GAT) or GraphSAGE, and work with larger datasets.
 
-🤝 Contributing
+## 🤝 Contributing
 Feel free to submit pull requests or raise issues to enhance the functionality of the repository. Contributions are welcome!
 
-👨‍💻 Author
-This project was created by [Your Name].
+### 👨‍💻 Author
+This project was created by Rithvik Narayana Swamy.
