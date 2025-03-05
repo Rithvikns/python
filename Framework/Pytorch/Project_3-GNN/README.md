@@ -1,30 +1,35 @@
+# Graph Neural Network (GNN) with PyTorch Geometric and Visualization
 
-Graph Neural Network (GNN) with PyTorch Geometric and Visualization
-This repository demonstrates the implementation of a simple Graph Neural Network (GNN) using PyTorch Geometric for graph data processing, along with a visualization of the graph structure using NetworkX and Matplotlib.
+This repository demonstrates the implementation of a **simple Graph Neural Network (GNN)** using **PyTorch Geometric** for graph data processing, along with a visualization of the graph structure using **NetworkX** and **Matplotlib**.
 
-📄 Overview
+## 📄 Overview
+
 The goal of this script is to:
+1. Create a graph representation using PyTorch Geometric, with nodes, edges, and edge weights.
+2. Build a simple **Graph Convolutional Network (GCN)** for node feature transformation.
+3. Perform a forward pass through the GNN to get the node feature outputs.
+4. Visualize the graph using **NetworkX** and **Matplotlib**.
 
-Create a graph representation using PyTorch Geometric, with nodes, edges, and edge weights.
-Build a simple Graph Convolutional Network (GCN) for node feature transformation.
-Perform a forward pass through the GNN to get the node feature outputs.
-Visualize the graph using NetworkX and Matplotlib.
-🛠️ Installation
+---
+
+## 🛠️ Installation
+
 Before running the script, ensure the following dependencies are installed:
 
-bash
-Copy
-Edit
+```bash
 pip install torch torch_geometric networkx matplotlib numpy
+'''
+
 PyTorch: The deep learning framework used to build and train neural networks.
 PyTorch Geometric: A library built on top of PyTorch to handle graph data and implement graph neural networks (GNNs).
 NetworkX: A package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
 Matplotlib: A plotting library used for graph visualization.
+
 📂 Files
 gnn_pytorch.py
 This Python script demonstrates the entire process of creating a simple graph, defining a GNN, performing a forward pass, and visualizing the results.
 
-🖥️ Code Explanation
+## 🖥️ Code Explanation
 1. Graph Data (Edges and Weights)
 We define the graph with nodes, edges, and edge weights.
 
