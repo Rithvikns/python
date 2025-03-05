@@ -18,7 +18,7 @@ Before running the script, ensure the following dependencies are installed:
 
 ```bash
 pip install torch torch_geometric networkx matplotlib numpy
-'''
+```
 
 PyTorch: The deep learning framework used to build and train neural networks.
 PyTorch Geometric: A library built on top of PyTorch to handle graph data and implement graph neural networks (GNNs).
