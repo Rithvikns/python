@@ -110,19 +110,6 @@ This approach efficiently finds the maximum profit with at most two transactions
 To return exact buy/sell days, we can modify the code to store transaction indices.
 
 
----
-
-Let me know if you want further clarifications!
-
----
-
-### **How to Use It on GitHub?**
-1. Create a new repository.
-2. Upload this `README.md` file.
-3. Add the Python file (`max_profit.py`) with the implementation.
-
-This `README.md` file clearly explains the problem, algorithm, and solution with examples. Would you like me to add anything else?
-
 
 	
 
