@@ -21,12 +21,4 @@ def max_profit(prices):
     max_profit = max(max_profit , left_profit[i] + right_profit[i])
     return max_profit
 
-
-
-
-
-
-
-
-
 maxprofit([3,3,5,0,0,3,1,4]) 
