@@ -6,9 +6,10 @@ You may complete at most **two transactions** to maximize your profit.
 **Note:** You must sell the stock before buying again.
 
 ### **Example 1**
-´´´console
+```console
 Input: prices = [3,3,5,0,0,3,1,4] Output: 6 Explanation: Buy on day 4 (price = 0), sell on day 5 (price = 3), profit = 3 - 0 = 3. Buy on day 6 (price = 1), sell on day 7 (price = 4), profit = 4 - 1 = 3. Total profit = 3 + 3 = 6.
-´´´
+```
+
 ### **Example 2**
 
 Input: prices = [1,2,3,4,5] Output: 4 Explanation: Buy on day 1, sell on day 5, profit = 4 - 1 = 4.
