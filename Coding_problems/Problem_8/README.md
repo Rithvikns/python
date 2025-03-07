@@ -11,9 +11,9 @@ Input: prices = [3,3,5,0,0,3,1,4] Output: 6 Explanation: Buy on day 4 (price = 0
 ```
 
 ### **Example 2**
-
+```
 Input: prices = [1,2,3,4,5] Output: 4 Explanation: Buy on day 1, sell on day 5, profit = 4 - 1 = 4.
-
+```
 ---
 
 ## **Algorithm Explanation**
@@ -87,47 +87,6 @@ Compute `max_profit = left_profit[i] + right_profit[i]` for each day.
    - **Profit = 4 - 1 = 3**.
 
 **Total Profit = 6**.
-
----
-
-## **Python Code**
-```python
-def maxProfit(prices):
-    if not prices:
-        return 0
-
-    n = len(prices)
-    
-    # First transaction (left to right)
-    left_profit = [0] * n
-    min_price = prices[0]
-    
-    for i in range(1, n):
-        min_price = min(min_price, prices[i])
-        left_profit[i] = max(left_profit[i - 1], prices[i] - min_price)
-    
-    # Second transaction (right to left)
-    right_profit = [0] * n
-    max_price = prices[-1]
-    
-    for i in range(n - 2, -1, -1):
-        max_price = max(max_price, prices[i])
-        right_profit[i] = max(right_profit[i + 1], max_price - prices[i])
-
-    # Compute max total profit
-    max_profit = 0
-    best_day = 0
-    for i in range(n):
-        if left_profit[i] + right_profit[i] > max_profit:
-            max_profit = left_profit[i] + right_profit[i]
-            best_day = i
-
-    return max_profit
-
-# Example test cases
-print(maxProfit([3,3,5,0,0,3,1,4])) # Output: 6
-print(maxProfit([1,2,3,4,5])) # Output: 4
-print(maxProfit([7,6,4,3,1])) # Output: 0
 
 
 ---
