@@ -1,11 +1,3 @@
-
-Sure! Below is a GitHub README.md file with an explanation and the optimized Bidirectional BFS Python solution for the Word Ladder problem.
-
-
----
-
-README.md
-
 # Word Ladder Problem
 
 ## Problem Statement
