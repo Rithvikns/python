@@ -61,10 +61,20 @@ pattern = r'^(?=(?:.*[A-Z]){2,})(?=(?:.*\d){3,})(?!.*(.).*\1)[A-Za-z0-9]{10}$'
 ```
 
 ^ → Start of the string
+
+
 (?=(?:.*[A-Z]){2,}) → Ensures at least 2 uppercase letters
+
+
 (?=(?:.*\d){3,}) → Ensures at least 3 digits
+
+
 (?!.*(.).*\1) → Ensures all characters are unique (negative lookahead for duplicates)
+
+
 [A-Za-z0-9]{10} → Ensures exactly 10 alphanumeric characters
+
+
 $ → End of the string
 
 ### 1. (?=...) → Positive Lookahead
