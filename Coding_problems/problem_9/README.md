@@ -15,7 +15,7 @@ If no valid transformation exists, return 0.
 beginWord = "hit"
 endWord = "cog"
 wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-
+```
 Output
 
 5
