@@ -19,7 +19,7 @@ Input: [1,2,3]
 Output: 13 + 12 =  25
 ```
 ## Explanation:
--The root-to-leaf path 1->2
+ - The root-to-leaf path 1->2
 -represents the number 12.
 -The root-to-leaf path 1->3
 -represents the number 13.
