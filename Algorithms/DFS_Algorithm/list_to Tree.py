@@ -9,7 +9,7 @@ Class TreeNode():
 def list_to_tree(lst):
   if not lst:
     return None
-  root = TreeNodelst[0]
+  root = TreeNode(lst[0])
   queue = deque(root)
   i = 1
   while i<len(lst):
