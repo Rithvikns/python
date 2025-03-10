@@ -67,7 +67,7 @@ print(maxProfit([7,1,5,3,6,4]))  # Output: 7
 print(maxProfit([1,2,3,4,5]))    # Output: 4
 print(maxProfit([7,6,4,3,1]))    # Output: 0
 ```
-# Second version
+# Second version - Atmost One transaction
 If you were only permitted to complete atmost one transaction (i.e buy one ans sell one stock), design an algorithm to find the max profit
 
 ## Solution
@@ -81,8 +81,26 @@ def max_profit(prices):
         profit[i] = max(profit[i-1] , prices[i] - min_price)
     return max(profit)
 ```
-# Third Version
-        
+# Third Version - Atmost Two Transaction
+```python
+def max_profit(prices):
+    n = len(prices)
+    left_profit = [0] * n 
+    min_price = prices[0]
+    for i in range(1,n):
+        min_price = min(min_price , prices[i])
+        left_profit[i] = max(profit[i-1] , prices[i] - min_price)
+
+    right_profit = [0] * n 
+    max_price = prices[-1]
+    for i in range(n-2,-1,-1):
+        max_price = max(max_price , prices[i])
+        right_profit[i] = max(profit[i-1] , max_price - prices[i])
+    profit = 0
+    for i in range(n):
+        profit = max(profit , left_profit[i] + right_profit[i])
+    return max(profit)
+```     
 
 ## Complexity Analysis
 - **Time Complexity**: `O(n)`, as we traverse the array once.
