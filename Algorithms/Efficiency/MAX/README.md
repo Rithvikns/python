@@ -39,6 +39,10 @@ def max_non_adjacent_sum(arr, index):
 arr = [3, 2, 7, 10]
 print(max_non_adjacent_sum(arr, len(arr) - 1))  # Output: 13
 ```
+### Computation
+ __ __ __ __
+| 3| 2| 7|10|
+ 
 
 ### Optimized Approach using Dynamic Programming (O(n) Time Complexity)
 Instead of recalculating values, we use **bottom-up DP** with two variables:
