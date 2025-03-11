@@ -43,6 +43,29 @@ print(max_non_adjacent_sum(arr, len(arr) - 1))  # Output: 13
 ```console
  __ __ __ __
 | 3| 2| 7|10|
+Ist iteration
+take = 10 + function call1(arr,index-2)
+function call1 -> index = 1 , take = 2+function call2(arr,index-2)
+function call2 -> index = -1, return 0
+function call1 -> take = 2 , skip = function call3(arr,index-1)
+function call3 -> index = 0, return arr[0] = 3
+function call1 -> take = 2,skip=3 , return max = 3
+current execution : take = 10+3 =13
+current execution : skip = function call4(arr,2)
+function call4 -> take = 7+function call5(arr,0)
+function call5 -> return 3
+function call4 -> take = 10 , skip = function call6(arr,1)
+function call6 -> take = 2+function call7(arr,-1)
+function call7 -> return 0
+function call6 -> take = 2, skip = function call8 (arr,0)
+function call8 -> return 3
+function call6 -> return max(2,3) = 3
+function call4 -> take = 10 , skip = function call9(arr,1)
+function call9 -> take = 2 + function call10(return 0) = 2
+function call9 -> take = 2, skip = function call11(return 3) , return max(2,3) = 3
+function call4 -> take = 10, skip = 4 , max = 10 , return 10
+current execution : take = 13 , skip = 10 , max = 13
+return 13
  ```
 
 ### Optimized Approach using Dynamic Programming (O(n) Time Complexity)
@@ -67,7 +90,24 @@ def max_non_adjacent_sum(arr):
 arr = [3, 2, 7, 10]
 print(max_non_adjacent_sum(arr))  # Output: 13
 ```
+### computation
+```console
+ __ __ __ __
+| 3| 2| 7|10|
 
+____________________________________________________________
+Iteration count |  num  |  Prev1  | prev2 | Current         |
+________________|_______|_________|_______|_________________|
+1 - loop begin  |   3   |    0    |   0   |     3           |
+1 - loop end    |   3   |    3    |   0   |     3           |
+2 - loop begin  |   2   |    3    |   0   |     3           |
+2 - loop end    |   2   |    3    |   3   |     3           |
+3 - loop begin  |   7   |    3    |   3   |     10          |
+3 - loop end    |   7   |    10   |   3   |     10          |
+4 - loop begin  |   10  |    10   |   10  |     13          |
+4 - loop end    |   10  |    13   |   10  |     13          |
+_____________________________________________________________
+```
 ## Why `max` Improves Efficiency
 1. **Avoids Redundant Computations**: Instead of checking all subsets, we only compare two values (`take` or `skip`).
 2. **Reduces Space Complexity to O(1)**: We only use two variables (`prev1`, `prev2`).
