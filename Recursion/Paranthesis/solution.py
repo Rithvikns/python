@@ -3,6 +3,17 @@ def generate_paranthesis(n):
     if n == 0:
       output.append("".join(current_list[:]))
       return 
-    if diff < 0 or diff > n:
+    elif diff < 0 or diff > n:
       return
-    
+    else:
+      current_list.append('(')
+      recursion(n-1,diff+1,current_list)
+      current_list.pop()
+      current_list.append(')')
+      recursion(n-1,diff-1,current_list)
+      current_list.pop()
+  output = []
+  recursion(2*n,0,[])
+  return output
+
+print(generate_paranthesis(3))
