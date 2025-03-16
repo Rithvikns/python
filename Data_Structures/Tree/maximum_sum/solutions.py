@@ -30,7 +30,7 @@ class Tree:
         
         return dfs(self.root)
 
-# Example usage
+# Example
 edges = [
     (1, 2, 3),
     (1, 3, 5),
