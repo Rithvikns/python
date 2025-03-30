@@ -12,6 +12,8 @@ Algorithms: A variety of algorithmic implementations in Python.
 
 Coding Problems: Solutions to daily coding challenges.
 
+Data Structures : Understanding various types of data structures.
+
 Logical Reasoning: Problems that help sharpen logical thinking.
 
 Knight's Tour Problem: Exploration of the classic chess-based problem.
