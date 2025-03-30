@@ -113,4 +113,4 @@ Graphs are used in many real-world applications, including:
 
 ## Conclusion
 
-Graphs are powerful data structures with vast real-world applications. They come in many forms, including directed, undirected, cyclic, aczclic, weighted, and unweighted graphs. Understanding graph traversal, algorithms, and representations is crucial for solving many complex problems efficiently.
+Graphs are powerful data structures with vast real-world applications. They come in many forms, including directed, undirected, cyclic, acyclic, weighted, and unweighted graphs. Understanding graph traversal, algorithms, and representations is crucial for solving many complex problems efficiently.
