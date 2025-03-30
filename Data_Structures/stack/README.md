@@ -26,7 +26,7 @@ Where is Stack Used?
 - 1. Undo Mechanism in Software
 
 Stacks are commonly used in undo operations within text editors, image editors, and various software tools. Every action (e.g., typing a word, applying a filter) is pushed onto the stack. When the user hits "Undo," the most recent action is popped off.
-2. Expression Evaluation
+- 2. Expression Evaluation
 
 Stacks are often used in compilers and interpreters for expression evaluation (such as infix, postfix, and prefix expressions). This involves pushing and popping operands and operators to evaluate mathematical expressions.
 3. Backtracking Algorithms
