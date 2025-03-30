@@ -23,7 +23,7 @@ In a stack, there are two main operations:
     Size: Returns the number of elements currently in the stack.
 
 Where is Stack Used?
-1. Undo Mechanism in Software
+- 1. Undo Mechanism in Software
 
 Stacks are commonly used in undo operations within text editors, image editors, and various software tools. Every action (e.g., typing a word, applying a filter) is pushed onto the stack. When the user hits "Undo," the most recent action is popped off.
 2. Expression Evaluation
