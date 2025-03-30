@@ -1,6 +1,4 @@
-# Stack Data Structure - Example Problem
-
-## Problem Statement
+# Problem Statement
 
 ### Title: **Valid Parentheses Matching**
 
