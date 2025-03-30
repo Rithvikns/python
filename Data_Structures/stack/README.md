@@ -10,7 +10,7 @@ In a stack, there are two main operations:
 
     - **Pop**: Remove the top item from the stack.
 
-Key Operations
+## Key Operations
 
     Push: Adds an element to the stack.
 
