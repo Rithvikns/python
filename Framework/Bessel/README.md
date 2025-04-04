@@ -55,6 +55,4 @@ We welcome contributions! To contribute:
 ## License
 This project is licensed under the MIT License.
 
-## Contact
-For any inquiries or issues, please create an issue on GitHub or contact the maintainer.
 
