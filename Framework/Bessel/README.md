@@ -52,7 +52,4 @@ We welcome contributions! To contribute:
 2. Create a new branch.
 3. Submit a pull request.
 
-## License
-This project is licensed under the MIT License.
-
 
