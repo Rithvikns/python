@@ -124,7 +124,7 @@ void printSolution(vector<vector<int>>& board) {
     }
 }
 ```
-
+.
 This function is used to print the output if the solution exists .
 
 # Task6 : main block .
